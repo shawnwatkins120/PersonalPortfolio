@@ -7,6 +7,7 @@ html, body {
   color: #ffffff;
   font-family: "Courier New", Courier, monospace;
   -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke: 0.4px currentColor;
 }
 
 body {
@@ -42,6 +43,7 @@ body {
   transform: skewX(-9deg);
   font-style: normal;
   white-space: nowrap;
+  -webkit-text-stroke: 0;
 }
 .wordmark-box.small .wordmark { font-size: 26px; }
 
@@ -76,10 +78,10 @@ nav.main a:hover { color: #4D78F0; }
   display: flex;
   gap: 26px;
   margin-top: 64px;
-  color: #5a5a5a;
+  color: #8a8a8a;
   font-size: 22px;
 }
-.social a { color: #5a5a5a; text-decoration: none; transition: color 0.15s ease; }
+.social a { color: #8a8a8a; text-decoration: none; transition: color 0.15s ease; }
 .social a:hover { color: #ffffff; }
 
 /* ---- Content pages ---- */
@@ -105,7 +107,7 @@ nav.main a:hover { color: #4D78F0; }
 }
 .entry .meta {
   font-size: 14px;
-  color: #777777;
+  color: #c4c4c4;
   margin: 4px 0 12px;
 }
 .entry .stack {
@@ -117,7 +119,7 @@ nav.main a:hover { color: #4D78F0; }
 .entry ul { list-style: none; }
 .entry li {
   font-size: 14px;
-  color: #cccccc;
+  color: #ffffff;
   line-height: 1.7;
   padding-left: 18px;
   position: relative;
@@ -132,7 +134,7 @@ nav.main a:hover { color: #4D78F0; }
 
 .entry .desc {
   font-size: 13px;
-  color: #a8a8a8;
+  color: #ffffff;
   line-height: 1.85;
   margin-bottom: 14px;
 }
@@ -152,14 +154,14 @@ nav.main a:hover { color: #4D78F0; }
 
 .prose p {
   font-size: 15px;
-  color: #cccccc;
+  color: #ffffff;
   line-height: 1.9;
   margin-bottom: 18px;
 }
 
 .skills-grid { line-height: 2; }
 .skills-grid .row { font-size: 14px; margin-bottom: 4px; }
-.skills-grid .k { color: #777777; }
+.skills-grid .k { color: #c4c4c4; }
 .skills-grid .v { color: #ffffff; }
 
 .contact-list { line-height: 2.4; }
@@ -170,7 +172,7 @@ nav.main a:hover { color: #4D78F0; }
   letter-spacing: 0.5px;
   display: block;
 }
-.contact-list .lbl { color: #777777; font-size: 13px; }
+.contact-list .lbl { color: #c4c4c4; font-size: 13px; }
 .contact-list a:hover { color: #4D78F0; }
 
 /* ---- Back link ---- */
@@ -178,5 +180,5 @@ nav.main a:hover { color: #4D78F0; }
   margin-top: 56px;
   font-size: 15px;
 }
-.back a { color: #777777; text-decoration: none; letter-spacing: 0.5px; }
+.back a { color: #c4c4c4; text-decoration: none; letter-spacing: 0.5px; }
 .back a:hover { color: #ffffff; }
