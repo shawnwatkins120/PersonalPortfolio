@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shawn Watkins</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="wordmark-box" href="index.html"><span class="wordmark">Shawn Watkins</span></a>
+
+  <div class="timestamp" id="clock">06/14/2026 10:32am EDT</div>
+
+  <div class="gap"></div>
+
+  <nav class="main">
+    <a href="about.html">about</a>
+    <a href="contact.html">contact</a>
+    <a href="experience.html">experience</a>
+    <a href="projects.html">projects</a>
+    <a href="Shawn_Watkins_Resume.pdf" target="_blank">resume</a>
+  </nav>
+
+  <div class="social">
+    <a href="https://www.linkedin.com/in/shawn-watkins-51b217351" target="_blank" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+    <a href="mailto:shawnwatkins120@gmail.com" aria-label="Email"><i class="ti ti-mail"></i></a>
+  </div>
+
+<script>
+function pad(n){ return String(n).padStart(2,"0"); }
+function updateClock(){
+  var now = new Date();
+  var parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/New_York",
+    month: "2-digit", day: "2-digit", year: "numeric",
+    hour: "2-digit", minute: "2-digit", hour12: true,
+    timeZoneName: "short"
+  }).formatToParts(now);
+  var p = {};
+  parts.forEach(function(x){ p[x.type] = x.value; });
+  var ampm = (p.dayPeriod || "AM").toLowerCase();
+  var tz = p.timeZoneName || "EST";
+  var str = p.month + "/" + p.day + "/" + p.year + " " + p.hour + ":" + p.minute + ampm + " " + tz;
+  document.getElementById("clock").textContent = str;
+}
+updateClock();
+setInterval(updateClock, 1000);
+</script>
+</body>
+</html>
