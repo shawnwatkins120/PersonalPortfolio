@@ -29,7 +29,7 @@
   <section class="hero">
     <h1>Shawn Watkins</h1>
     <div class="role">Software Engineer</div>
-    <p class="tagline">Computer Science at Old Dominion University. I build full-stack, embedded, and AI systems — currently leading software for a naval hull-inspection robot, and building Keelson, an AI reporting tool for Navy maintenance.</p>
+    <p class="tagline">Computer Science at Old Dominion University and a software engineer in Hampton Roads, Virginia. I work across the stack — full-stack web, embedded systems, and AI — with a focus on clean, maintainable code that holds up against real hardware and real constraints. Right now I lead software for a naval hull-inspection robot and I'm building Keelson, an AI tool that turns field inspection evidence into submission-ready Navy maintenance reports.</p>
     <div class="meta">Hampton Roads, Virginia &middot; Available 2026</div>
     <div class="cta">
       <a class="btn btn-primary" href="projects.html">View projects</a>
@@ -40,7 +40,7 @@
   </section>
 
   <section>
-    <div class="eyebrow">Featured Projects</div>
+    <div class="eyebrow">Featured Project</div>
     <div class="projects">
 
       <div class="card">
@@ -51,42 +51,14 @@
           </div>
           <span class="flag">Founding project</span>
         </div>
-        <p class="desc">A React application that turns field evidence — photos and inspection notes — into formal, submission-ready Navy maintenance reports. An LLM pipeline drafts each section as structured JSON against a typed schema, then routes it through a human-in-the-loop review (draft → edit → QA verification → sign-off → export) with per-line evidence traceability, an offline deterministic fallback, and a CUI-aware data posture.</p>
+        <p class="desc">A React application that turns raw field evidence — inspection photos and notes — into formal, submission-ready Navy maintenance-availability reports. Engineered LLM prompts return strict structured JSON parsed against a typed report schema, while a human-in-the-loop pipeline (draft → edit → section-level QA verification → sign-off → export) keeps a reviewer in control at every step. Each line of a report stays traceable to the evidence behind it, a deterministic offline fallback keeps the tool working when the API is unavailable, and the final export maps cleanly to Navy database fields under a CUI-aware data posture.</p>
         <div class="tags">
-          <span class="tag">React</span><span class="tag">LLM API</span><span class="tag">Structured JSON</span><span class="tag">Typed schema</span><span class="tag">Defense</span>
+          <span class="tag">React</span><span class="tag">LLM API</span><span class="tag">Structured JSON</span><span class="tag">Typed schema</span><span class="tag">Human-in-the-loop</span><span class="tag">Defense</span>
         </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <div>
-            <h3>Hexapod Hull-Inspection Robot</h3>
-            <div class="ctx">MI Technical Solutions — R&amp;D</div>
-          </div>
-          <span class="flag">Current</span>
-        </div>
-        <p class="desc">An electromagnetic walking robot that traverses naval ship hulls to detect structural and safety issues. I lead the software: a multi-module Java application on a Raspberry Pi 5 coordinating gait control, Arduino motor firmware over serial, I2C sensor integration, and live camera streaming into an operator UI.</p>
-        <div class="tags">
-          <span class="tag">Java</span><span class="tag">Maven</span><span class="tag">Raspberry Pi</span><span class="tag">Arduino</span><span class="tag">Embedded</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <div>
-            <h3>AI-Powered DevOps Automation</h3>
-            <div class="ctx">Microsoft AI Dev Days 2026</div>
-          </div>
-        </div>
-        <p class="desc">A pipeline chaining six specialized GPT-4o agents in sequence, each emitting schema-validated JSON. Static analysis is normalized to SARIF, a human-in-the-loop gate blocks promotion until approved, and a SignalR layer streams live state to a dashboard.</p>
-        <div class="tags">
-          <span class="tag">C#/.NET 8</span><span class="tag">GPT-4o</span><span class="tag">Azure AI Foundry</span><span class="tag">SignalR</span>
-        </div>
-        <div class="card-links"><a href="https://github.com/ArmaniTulip/Hackathon-2026" target="_blank">View code →</a></div>
       </div>
 
     </div>
-    <p style="margin-top:22px;font-size:15px;"><a href="projects.html">All projects →</a></p>
+    <p style="margin-top:22px;font-size:15px;"><a href="projects.html">See all projects →</a></p>
   </section>
 </main>
 
