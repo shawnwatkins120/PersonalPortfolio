@@ -1,184 +1,129 @@
-/* ---- Shawn Watkins — brutalist monospace portfolio ---- */
-
+/* ---- Shawn Watkins — clean professional portfolio ---- */
+:root {
+  --bg: #ffffff;
+  --surface: #f8fafc;
+  --border: #e5e7eb;
+  --text: #111827;
+  --text-soft: #4b5563;
+  --text-mute: #6b7280;
+  --accent: #2563eb;
+  --accent-soft: #eff4ff;
+  --max: 760px;
+}
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
-html, body {
-  background: #000000;
-  color: #ffffff;
-  font-family: "Courier New", Courier, monospace;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke: 0.4px currentColor;
-}
-
+html { scroll-behavior: smooth; }
 body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 60px 24px 80px;
-}
-
-/* ---- Box wordmark ---- */
-.wordmark-box {
-  background: #1F4FE5;
-  height: 80px;
-  padding: 0 26px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-}
-.wordmark-box.small {
-  height: 54px;
-  padding: 0 18px;
-}
-.wordmark {
-  font-family: "Archivo", "Arial Black", sans-serif;
-  font-weight: 800;
-  color: #ffffff;
-  font-size: 40px;
-  letter-spacing: -1px;
-  line-height: 1;
-  display: inline-block;
-  transform: skewX(-9deg);
-  font-style: normal;
-  white-space: nowrap;
-  -webkit-text-stroke: 0;
-}
-.wordmark-box.small .wordmark { font-size: 26px; }
-
-/* ---- Timestamp ---- */
-.timestamp {
-  color: #ffffff;
-  font-size: 17px;
-  margin-top: 24px;
-  letter-spacing: 0.5px;
-}
-
-/* ---- Navigation (landing) ---- */
-.gap { height: 150px; }
-
-nav.main {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 34px;
-}
-nav.main a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 17px;
-  letter-spacing: 0.5px;
-  transition: color 0.15s ease;
-}
-nav.main a:hover { color: #4D78F0; }
-
-/* ---- Social row ---- */
-.social {
-  display: flex;
-  gap: 26px;
-  margin-top: 64px;
-  color: #8a8a8a;
-  font-size: 22px;
-}
-.social a { color: #8a8a8a; text-decoration: none; transition: color 0.15s ease; }
-.social a:hover { color: #ffffff; }
-
-/* ---- Content pages ---- */
-.page {
-  width: 100%;
-  max-width: 640px;
-  margin-top: 64px;
-}
-.page h1 {
-  font-size: 20px;
-  font-weight: normal;
-  letter-spacing: 1px;
-  margin-bottom: 40px;
-  color: #ffffff;
-}
-.page h1::before { content: "// "; color: #4D78F0; }
-
-.entry { margin-bottom: 40px; }
-.entry .title {
+  background: var(--bg);
+  color: var(--text-soft);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
-  color: #ffffff;
-  letter-spacing: 0.5px;
 }
-.entry .meta {
-  font-size: 14px;
-  color: #c4c4c4;
-  margin: 4px 0 12px;
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- Header / nav ---- */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: saturate(180%) blur(8px);
+  z-index: 10;
 }
-.entry .stack {
-  font-size: 13px;
-  color: #4D78F0;
-  margin-bottom: 12px;
-  letter-spacing: 0.5px;
+.nav {
+  max-width: var(--max); margin: 0 auto;
+  padding: 16px 24px;
+  display: flex; align-items: center; justify-content: space-between;
 }
-.entry ul { list-style: none; }
-.entry li {
-  font-size: 14px;
-  color: #ffffff;
-  line-height: 1.7;
-  padding-left: 18px;
-  position: relative;
-  margin-bottom: 6px;
-}
-.entry li::before {
-  content: "—";
-  position: absolute;
-  left: 0;
-  color: #555555;
+.nav .brand { font-weight: 700; color: var(--text); font-size: 16px; letter-spacing: -0.01em; }
+.nav .brand:hover { text-decoration: none; color: var(--accent); }
+.nav .links { display: flex; gap: 22px; }
+.nav .links a { color: var(--text-mute); font-size: 14.5px; font-weight: 500; }
+.nav .links a:hover { color: var(--text); text-decoration: none; }
+.nav .links a.active { color: var(--text); }
+
+/* ---- Layout ---- */
+main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+section:last-of-type { border-bottom: none; }
+.eyebrow {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-mute); margin-bottom: 20px;
 }
 
-.entry .desc {
-  font-size: 13px;
-  color: #ffffff;
-  line-height: 1.85;
-  margin-bottom: 14px;
+/* ---- Hero ---- */
+.hero { padding: 72px 0 56px; border-bottom: 1px solid var(--border); }
+.hero h1 { font-size: 42px; font-weight: 800; color: var(--text); letter-spacing: -0.03em; line-height: 1.1; }
+.hero .role { font-size: 19px; color: var(--text); font-weight: 600; margin-top: 12px; }
+.hero .tagline { font-size: 17px; color: var(--text-soft); margin-top: 14px; max-width: 600px; }
+.hero .meta { font-size: 14.5px; color: var(--text-mute); margin-top: 16px; }
+.hero .cta { display: flex; gap: 14px; margin-top: 26px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 14.5px; font-weight: 600; padding: 9px 16px; border-radius: 8px;
 }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: #1d4ed8; text-decoration: none; }
+.btn-ghost { border: 1px solid var(--border); color: var(--text); }
+.btn-ghost:hover { border-color: #cbd5e1; background: var(--surface); text-decoration: none; }
 
-.entry .link {
-  font-size: 13px;
-  margin-top: 10px;
-}
-.entry .link a {
-  color: #ffffff;
-  text-decoration: none;
-  letter-spacing: 0.5px;
-  border-bottom: 1px solid #4D78F0;
-  padding-bottom: 2px;
-}
-.entry .link a:hover { color: #4D78F0; }
+/* ---- Section titles for sub-pages ---- */
+.page-title { padding: 56px 0 8px; }
+.page-title h1 { font-size: 32px; font-weight: 800; color: var(--text); letter-spacing: -0.02em; }
+.page-title p { color: var(--text-mute); margin-top: 8px; }
 
-.prose p {
-  font-size: 15px;
-  color: #ffffff;
-  line-height: 1.9;
-  margin-bottom: 18px;
-}
+/* ---- Prose ---- */
+.prose p { margin-bottom: 16px; }
+.prose p:last-child { margin-bottom: 0; }
 
-.skills-grid { line-height: 2; }
-.skills-grid .row { font-size: 14px; margin-bottom: 4px; }
-.skills-grid .k { color: #c4c4c4; }
-.skills-grid .v { color: #ffffff; }
-
-.contact-list { line-height: 2.4; }
-.contact-list a, .contact-list span {
-  color: #ffffff;
-  font-size: 16px;
-  text-decoration: none;
-  letter-spacing: 0.5px;
-  display: block;
+/* ---- Project cards ---- */
+.projects { display: flex; flex-direction: column; gap: 18px; }
+.card {
+  border: 1px solid var(--border); border-radius: 12px; padding: 24px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
-.contact-list .lbl { color: #c4c4c4; font-size: 13px; }
-.contact-list a:hover { color: #4D78F0; }
-
-/* ---- Back link ---- */
-.back {
-  margin-top: 56px;
-  font-size: 15px;
+.card:hover { border-color: #cbd5e1; box-shadow: 0 4px 16px rgba(15,23,42,0.05); }
+.card .card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.card h3 { font-size: 18px; color: var(--text); font-weight: 700; }
+.card .flag {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-soft); padding: 3px 9px; border-radius: 999px; white-space: nowrap;
 }
-.back a { color: #c4c4c4; text-decoration: none; letter-spacing: 0.5px; }
-.back a:hover { color: #ffffff; }
+.card .ctx { font-size: 13.5px; color: var(--text-mute); margin-top: 3px; }
+.card .desc { margin-top: 12px; font-size: 15px; color: var(--text-soft); }
+.card .tags { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+.card .tag { font-size: 12.5px; color: #475569; background: var(--surface); border: 1px solid var(--border); padding: 3px 10px; border-radius: 6px; }
+.card .card-links { margin-top: 16px; display: flex; gap: 18px; font-size: 14px; font-weight: 600; }
+
+/* ---- Experience / list entries ---- */
+.entry { padding: 24px 0; border-bottom: 1px solid var(--border); }
+.entry:last-child { border-bottom: none; }
+.entry .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.entry h3 { font-size: 17px; color: var(--text); font-weight: 700; }
+.entry .org { font-size: 15px; color: var(--text-soft); }
+.entry .when { font-size: 13.5px; color: var(--text-mute); white-space: nowrap; }
+.entry ul { margin: 12px 0 0; padding-left: 18px; }
+.entry li { font-size: 15px; color: var(--text-soft); margin-bottom: 6px; }
+
+/* ---- Skills ---- */
+.skills { display: grid; grid-template-columns: 140px 1fr; gap: 10px 20px; }
+.skills .k { font-size: 14px; color: var(--text-mute); font-weight: 600; }
+.skills .v { font-size: 15px; color: var(--text); }
+
+/* ---- Contact ---- */
+.contact-list { display: flex; flex-direction: column; gap: 18px; }
+.contact-list .item .lbl { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-mute); }
+.contact-list .item a, .contact-list .item span { font-size: 17px; color: var(--text); }
+
+/* ---- Footer ---- */
+footer { max-width: var(--max); margin: 0 auto; padding: 32px 24px 48px; color: var(--text-mute); font-size: 13.5px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 1px solid var(--border); }
+footer a { color: var(--text-mute); }
+footer a:hover { color: var(--text); text-decoration: none; }
+
+@media (max-width: 560px) {
+  .hero h1 { font-size: 34px; }
+  .nav .links { gap: 14px; }
+  .skills { grid-template-columns: 1fr; gap: 2px 0; }
+  .skills .k { margin-top: 10px; }
+}

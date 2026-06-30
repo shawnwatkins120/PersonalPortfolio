@@ -3,59 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>projects — Shawn Watkins</title>
+<title>Projects — Shawn Watkins</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <a class="wordmark-box small" href="index.html"><span class="wordmark">Shawn Watkins</span></a>
-
-  <div class="page">
-    <h1>projects</h1>
-
-    <div class="entry">
-      <div class="title">Electromagnetic Walking Hexapod — Navy Hull Inspection</div>
-      <div class="meta">MI Technical Solutions / R&amp;D</div>
-      <div class="stack">java &middot; maven &middot; raspberry pi 5 &middot; arduino &middot; bno055 imu</div>
-      <div class="desc">A six-legged walking platform that adheres to ferromagnetic naval hulls using electromagnet-tipped feet. A Java controller running on the Raspberry Pi 5 handles gait sequencing and leg coordination, dispatching joint commands over serial to Arduino Mega/Nano boards that drive the servo array through a PCA9685 16-channel PWM controller. A BNO055 IMU provides real-time orientation feedback over I2C for balance, while an Arducam IMX519 streams the live inspection feed.</div>
-      <ul>
-        <li>Multi-module Maven codebase (shared / controller / robot) running on a Raspberry Pi 5 with Arduino Mega/Nano over serial.</li>
-        <li>Servo control via PCA9685, orientation sensing with a BNO055 IMU, and live camera streaming from an Arducam IMX519.</li>
-        <li>Built to walk along naval ship hulls and detect structural and safety issues during inspection.</li>
-      </ul>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">Shawn Watkins</a>
+    <div class="links">
+      <a href="projects.html" class="active">Projects</a>
+      <a href="experience.html">Experience</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="Shawn_Watkins_Resume.pdf" target="_blank">Resume</a>
     </div>
+  </nav>
+</header>
 
-    <div class="entry">
-      <div class="title">AI-Powered DevOps Automation</div>
-      <div class="meta">Microsoft AI Dev Days 2026 — Hackathon</div>
-      <div class="stack">azure ai foundry &middot; c#/.net 8 &middot; gpt-4o &middot; signalr</div>
-      <div class="desc">An automated DevOps pipeline that chains six specialized GPT-4o agents in sequence, each constrained by its own system prompt to emit deterministic, schema-validated JSON that the next stage consumes. Static analysis results are normalized to the SARIF standard, a human-in-the-loop approval gate blocks promotion until a reviewer signs off, and a SignalR WebSocket layer pushes live pipeline state to a real-time dashboard.</div>
-      <ul>
-        <li>Designed an end-to-end six-agent sequential pipeline where each agent calls GPT-4o with a specialized prompt and emits structured JSON.</li>
-        <li>Implemented a human-in-the-loop approval gate and SARIF-compliant static analysis findings.</li>
-        <li>Integrated a real-time SignalR dashboard for live pipeline visibility.</li>
-      </ul>
-      <div class="link"><a href="https://github.com/ArmaniTulip/Hackathon-2026" target="_blank">view code &rarr;</a></div>
-    </div>
-
-    <div class="entry">
-      <div class="title">Misinformation Detection Web Application</div>
-      <div class="meta">Full-stack team project</div>
-      <div class="stack">node.js &middot; express &middot; react &middot; hugging face &middot; mysql</div>
-      <div class="desc">A full-stack credibility analysis service that ingests a news URL, scrapes and extracts the article body, and routes it through a Hugging Face language model that scores it across domain reputation, political bias, citation quality, and content integrity. The weighted sub-scores feed a scoring algorithm that returns a normalized 0&ndash;100 credibility rating, with analysis history persisted to a MySQL store behind JWT-authenticated user sessions.</div>
-      <ul>
-        <li>Integrated a Hugging Face LLM to evaluate news articles in real time across domain reputation, bias, citations, and content quality.</li>
-        <li>Fed structured JSON into a scoring algorithm that produces a 0&ndash;100 credibility score.</li>
-        <li>Added web scraping, article extraction, and a MySQL-backed history system with JWT authentication.</li>
-      </ul>
-      <div class="link"><a href="https://mrcarr87.github.io/CS-411W-Team-Blue-Misinformation-Project/" target="_blank">view live &rarr;</a></div>
-    </div>
-
-    <div class="back"><a href="index.html">&larr; index</a></div>
+<main>
+  <div class="page-title">
+    <h1>Projects</h1>
+    <p>Selected work across AI, embedded systems, and full-stack engineering.</p>
   </div>
+
+  <section style="border-bottom:none; padding-top:32px;">
+    <div class="projects">
+
+      <div class="card">
+        <div class="card-top">
+          <div><h3>Keelson</h3><div class="ctx">AI-assisted Navy maintenance reporting</div></div>
+          <span class="flag">Founding project</span>
+        </div>
+        <p class="desc">A React application that converts raw field evidence — photos and inspection notes — into formal, submission-ready Navy maintenance-availability reports. Engineered LLM prompts return strict structured JSON parsed against a typed report schema, then a human-in-the-loop pipeline (AI draft → edit → section-level QA verification → sign-off → export) keeps a reviewer in control. Includes per-line evidence traceability, an offline deterministic fallback when the API is unavailable, a submission-ready export mapped to Navy database fields, and a CUI / data-residency-aware security posture.</p>
+        <div class="tags">
+          <span class="tag">React</span><span class="tag">LLM API</span><span class="tag">Structured JSON</span><span class="tag">Typed schema</span><span class="tag">Human-in-the-loop</span><span class="tag">Defense</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div><h3>Electromagnetic Hexapod — Hull Inspection</h3><div class="ctx">MI Technical Solutions — R&amp;D</div></div>
+          <span class="flag">Current</span>
+        </div>
+        <p class="desc">A six-legged walking robot that adheres to ferromagnetic naval hulls to detect structural and safety issues. I lead the software end to end: a multi-module Java application on a Raspberry Pi 5 handles gait sequencing and leg coordination, dispatches joint commands over serial to Arduino motor firmware, integrates IMU and ultrasonic telemetry over I2C, and streams live camera video into the operator UI.</p>
+        <div class="tags">
+          <span class="tag">Java</span><span class="tag">Maven</span><span class="tag">Raspberry Pi 5</span><span class="tag">Arduino</span><span class="tag">I2C</span><span class="tag">Embedded</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div><h3>AI-Powered DevOps Automation</h3><div class="ctx">Microsoft AI Dev Days 2026</div></div>
+        </div>
+        <p class="desc">An automated DevOps pipeline chaining six specialized GPT-4o agents in sequence, each constrained by its own system prompt to emit deterministic, schema-validated JSON the next stage consumes. Static analysis is normalized to the SARIF standard, a human-in-the-loop approval gate blocks promotion until a reviewer signs off, and a SignalR WebSocket layer pushes live pipeline state to a dashboard.</p>
+        <div class="tags">
+          <span class="tag">C#/.NET 8</span><span class="tag">GPT-4o</span><span class="tag">Azure AI Foundry</span><span class="tag">SignalR</span><span class="tag">SARIF</span>
+        </div>
+        <div class="card-links"><a href="https://github.com/ArmaniTulip/Hackathon-2026" target="_blank">View code →</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div><h3>Misinformation Detection Web App</h3><div class="ctx">Full-stack team project</div></div>
+        </div>
+        <p class="desc">A full-stack credibility-analysis service that ingests a news URL, scrapes and extracts the article, and routes it through a Hugging Face model scoring domain reputation, political bias, citation quality, and content integrity. Weighted sub-scores feed an algorithm that returns a normalized 0–100 credibility rating, with history persisted to MySQL behind JWT-authenticated sessions.</p>
+        <div class="tags">
+          <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">React</span><span class="tag">Hugging Face</span><span class="tag">MySQL</span>
+        </div>
+        <div class="card-links"><a href="https://mrcarr87.github.io/CS-411W-Team-Blue-Misinformation-Project/" target="_blank">View live →</a></div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 Shawn Watkins</span>
+  <span><a href="https://www.linkedin.com/in/shawn-watkins-51b217351" target="_blank">LinkedIn</a> &nbsp;·&nbsp; <a href="mailto:shawnwatkins120@gmail.com">Email</a></span>
+</footer>
 
 </body>
 </html>

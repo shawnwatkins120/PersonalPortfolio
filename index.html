@@ -3,53 +3,97 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shawn Watkins</title>
+<title>Shawn Watkins — Software Engineer</title>
+<meta name="description" content="Shawn Watkins — software engineer in Hampton Roads, VA. Full-stack, embedded, and AI systems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <a class="wordmark-box" href="index.html"><span class="wordmark">Shawn Watkins</span></a>
-
-  <div class="timestamp" id="clock">06/14/2026 10:32am EDT</div>
-
-  <div class="gap"></div>
-
-  <nav class="main">
-    <a href="about.html">about</a>
-    <a href="contact.html">contact</a>
-    <a href="experience.html">experience</a>
-    <a href="projects.html">projects</a>
-    <a href="Shawn_Watkins_Resume.pdf" target="_blank">resume</a>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">Shawn Watkins</a>
+    <div class="links">
+      <a href="projects.html">Projects</a>
+      <a href="experience.html">Experience</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="Shawn_Watkins_Resume.pdf" target="_blank">Resume</a>
+    </div>
   </nav>
+</header>
 
-  <div class="social">
-    <a href="https://www.linkedin.com/in/shawn-watkins-51b217351" target="_blank" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
-    <a href="mailto:shawnwatkins120@gmail.com" aria-label="Email"><i class="ti ti-mail"></i></a>
-  </div>
+<main>
+  <section class="hero">
+    <h1>Shawn Watkins</h1>
+    <div class="role">Software Engineer</div>
+    <p class="tagline">Computer Science at Old Dominion University. I build full-stack, embedded, and AI systems — currently leading software for a naval hull-inspection robot, and building Keelson, an AI reporting tool for Navy maintenance.</p>
+    <div class="meta">Hampton Roads, Virginia &middot; Available 2026</div>
+    <div class="cta">
+      <a class="btn btn-primary" href="projects.html">View projects</a>
+      <a class="btn btn-ghost" href="Shawn_Watkins_Resume.pdf" target="_blank">Resume</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/shawn-watkins-51b217351" target="_blank">LinkedIn</a>
+      <a class="btn btn-ghost" href="mailto:shawnwatkins120@gmail.com">Email</a>
+    </div>
+  </section>
 
-<script>
-function pad(n){ return String(n).padStart(2,"0"); }
-function updateClock(){
-  var now = new Date();
-  var parts = new Intl.DateTimeFormat("en-US", {
-    timeZone: "America/New_York",
-    month: "2-digit", day: "2-digit", year: "numeric",
-    hour: "2-digit", minute: "2-digit", hour12: true,
-    timeZoneName: "short"
-  }).formatToParts(now);
-  var p = {};
-  parts.forEach(function(x){ p[x.type] = x.value; });
-  var ampm = (p.dayPeriod || "AM").toLowerCase();
-  var tz = p.timeZoneName || "EST";
-  var str = p.month + "/" + p.day + "/" + p.year + " " + p.hour + ":" + p.minute + ampm + " " + tz;
-  document.getElementById("clock").textContent = str;
-}
-updateClock();
-setInterval(updateClock, 1000);
-</script>
+  <section>
+    <div class="eyebrow">Featured Projects</div>
+    <div class="projects">
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <h3>Keelson</h3>
+            <div class="ctx">AI-assisted Navy maintenance reporting</div>
+          </div>
+          <span class="flag">Founding project</span>
+        </div>
+        <p class="desc">A React application that turns field evidence — photos and inspection notes — into formal, submission-ready Navy maintenance reports. An LLM pipeline drafts each section as structured JSON against a typed schema, then routes it through a human-in-the-loop review (draft → edit → QA verification → sign-off → export) with per-line evidence traceability, an offline deterministic fallback, and a CUI-aware data posture.</p>
+        <div class="tags">
+          <span class="tag">React</span><span class="tag">LLM API</span><span class="tag">Structured JSON</span><span class="tag">Typed schema</span><span class="tag">Defense</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <h3>Hexapod Hull-Inspection Robot</h3>
+            <div class="ctx">MI Technical Solutions — R&amp;D</div>
+          </div>
+          <span class="flag">Current</span>
+        </div>
+        <p class="desc">An electromagnetic walking robot that traverses naval ship hulls to detect structural and safety issues. I lead the software: a multi-module Java application on a Raspberry Pi 5 coordinating gait control, Arduino motor firmware over serial, I2C sensor integration, and live camera streaming into an operator UI.</p>
+        <div class="tags">
+          <span class="tag">Java</span><span class="tag">Maven</span><span class="tag">Raspberry Pi</span><span class="tag">Arduino</span><span class="tag">Embedded</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <h3>AI-Powered DevOps Automation</h3>
+            <div class="ctx">Microsoft AI Dev Days 2026</div>
+          </div>
+        </div>
+        <p class="desc">A pipeline chaining six specialized GPT-4o agents in sequence, each emitting schema-validated JSON. Static analysis is normalized to SARIF, a human-in-the-loop gate blocks promotion until approved, and a SignalR layer streams live state to a dashboard.</p>
+        <div class="tags">
+          <span class="tag">C#/.NET 8</span><span class="tag">GPT-4o</span><span class="tag">Azure AI Foundry</span><span class="tag">SignalR</span>
+        </div>
+        <div class="card-links"><a href="https://github.com/ArmaniTulip/Hackathon-2026" target="_blank">View code →</a></div>
+      </div>
+
+    </div>
+    <p style="margin-top:22px;font-size:15px;"><a href="projects.html">All projects →</a></p>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 Shawn Watkins</span>
+  <span><a href="https://www.linkedin.com/in/shawn-watkins-51b217351" target="_blank">LinkedIn</a> &nbsp;·&nbsp; <a href="mailto:shawnwatkins120@gmail.com">Email</a></span>
+</footer>
+
 </body>
 </html>
